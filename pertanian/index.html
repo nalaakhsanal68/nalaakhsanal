@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertanian Indonesia - Platform Pendukung Petani</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">🌾 Pertanian Indonesia</div>
+            <ul class="menu">
+                <li><a href="#home">Beranda</a></li>
+                <li><a href="#harga">Harga Pasar</a></li>
+                <li><a href="#edukasi">Edukasi</a></li>
+                <li><a href="#cuaca">Cuaca</a></li>
+                <li><a href="#news">Berita</a></li>
+                <li><a href="#teknologi">Teknologi</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Selamat Datang, Petani Indonesia!</h1>
+            <p>Platform Lengkap untuk Mendukung Pertanian Anda</p>
+            <button class="btn btn-primary" onclick="scrollTo('harga')">Mulai Sekarang</button>
+        </div>
+    </section>
+
+    <!-- Harga Pasar Section -->
+    <section id="harga" class="section">
+        <h2>💰 Harga Pasar</h2>
+        <div class="info-box">
+            <p>Pantau harga produk pertanian Anda secara real-time</p>
+        </div>
+        <div class="market-grid">
+            <div class="market-card">
+                <h3>🌾 Padi</h3>
+                <div class="price">Rp 5.200 / kg</div>
+                <p>Tingkat: <span class="trend up">↑ Naik 2%</span></p>
+            </div>
+            <div class="market-card">
+                <h3>🌽 Jagung</h3>
+                <div class="price">Rp 3.800 / kg</div>
+                <p>Tingkat: <span class="trend stable">→ Stabil</span></p>
+            </div>
+            <div class="market-card">
+                <h3>🥬 Sayuran Organik</h3>
+                <div class="price">Rp 8.500 / kg</div>
+                <p>Tingkat: <span class="trend up">↑ Naik 5%</span></p>
+            </div>
+            <div class="market-card">
+                <h3>🍅 Tomat</h3>
+                <div class="price">Rp 6.700 / kg</div>
+                <p>Tingkat: <span class="trend down">↓ Turun 1%</span></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Edukasi Section -->
+    <section id="edukasi" class="section section-alt">
+        <h2>📚 Edukasi Pertanian</h2>
+        <div class="education-grid">
+            <div class="edu-card">
+                <div class="edu-icon">🌱</div>
+                <h3>Teknik Menanam</h3>
+                <p>Pelajari cara menanam yang benar untuk hasil maksimal</p>
+                <button class="btn btn-secondary" onclick="showModal('teknik')">Pelajari</button>
+            </div>
+            <div class="edu-card">
+                <div class="edu-icon">💧</div>
+                <h3>Irigasi & Air</h3>
+                <p>Manajemen air yang efisien untuk lahan pertanian</p>
+                <button class="btn btn-secondary" onclick="showModal('irigasi')">Pelajari</button>
+            </div>
+            <div class="edu-card">
+                <div class="edu-icon">🐛</div>
+                <h3>Hama & Penyakit</h3>
+                <p>Identifikasi dan cara mengatasi hama & penyakit</p>
+                <button class="btn btn-secondary" onclick="showModal('hama')">Pelajari</button>
+            </div>
+            <div class="edu-card">
+                <div class="edu-icon">🧪</div>
+                <h3>Pupuk Organik</h3>
+                <p>Membuat pupuk organik sendiri dengan mudah</p>
+                <button class="btn btn-secondary" onclick="showModal('pupuk')">Pelajari</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cuaca Section -->
+    <section id="cuaca" class="section">
+        <h2>🌤️ Perkiraan Cuaca</h2>
+        <div class="info-box">
+            <p>Pantau cuaca untuk perencanaan pertanian yang lebih baik</p>
+        </div>
+        <div class="weather-grid">
+            <div class="weather-card">
+                <h3>Hari Ini</h3>
+                <div class="weather-icon">☀️</div>
+                <div class="weather-temp">28°C</div>
+                <p>Cerah</p>
+                <p class="small">Kelembaban: 65%</p>
+            </div>
+            <div class="weather-card">
+                <h3>Besok</h3>
+                <div class="weather-icon">⛅</div>
+                <div class="weather-temp">26°C</div>
+                <p>Berawan</p>
+                <p class="small">Kelembaban: 75%</p>
+            </div>
+            <div class="weather-card">
+                <h3>Lusa</h3>
+                <div class="weather-icon">🌧️</div>
+                <div class="weather-temp">24°C</div>
+                <p>Hujan Ringan</p>
+                <p class="small">Kelembaban: 85%</p>
+            </div>
+            <div class="weather-card">
+                <h3>4 Hari</h3>
+                <div class="weather-icon">☀️</div>
+                <div class="weather-temp">27°C</div>
+                <p>Cerah</p>
+                <p class="small">Kelembaban: 60%</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Berita Section -->
+    <section id="news" class="section section-alt">
+        <h2>📰 Berita Pertanian</h2>
+        <div class="news-grid">
+            <div class="news-card">
+                <h3>Subsidi Pupuk Ditingkatkan Tahun Ini</h3>
+                <p class="news-date">14 Mei 2026</p>
+                <p>Pemerintah meningkatkan alokasi subsidi pupuk untuk mendukung petani lokal...</p>
+                <button class="btn btn-secondary" onclick="alert('Baca selengkapnya: Pemerintah meningkatkan alokasi subsidi pupuk hingga 20% untuk mendukung produktivitas pertanian. Petani dapat mendaftar di kantor desa setempat.')">Baca</button>
+            </div>
+            <div class="news-card">
+                <h3>Teknologi Drone untuk Pertanian Mulai Tersebar</h3>
+                <p class="news-date">12 Mei 2026</p>
+                <p>Drone pertanian membantu monitoring lahan dengan lebih efisien dan cepat...</p>
+                <button class="btn btn-secondary" onclick="alert('Baca selengkapnya: Drone pertanian dapat memetakan lahan, monitoring kesehatan tanaman, dan menghemat biaya operasional hingga 30%.')">Baca</button>
+            </div>
+            <div class="news-card">
+                <h3>Harga Padi Meningkat 3% di Pasar Regional</h3>
+                <p class="news-date">10 Mei 2026</p>
+                <p>Peningkatan permintaan ekspor mendorong harga padi naik di pasar lokal...</p>
+                <button class="btn btn-secondary" onclick="alert('Baca selengkapnya: Permintaan padi dari negara tetangga meningkat drastis, membuat harga padi naik 3% dibanding minggu lalu.')">Baca</button>
+            </div>
+            <div class="news-card">
+                <h3>Workshop Pertanian Organik Gratis Bulan Depan</h3>
+                <p class="news-date">8 Mei 2026</p>
+                <p>Dinas Pertanian mengadakan workshop pertanian organik untuk petani pemula...</p>
+                <button class="btn btn-secondary" onclick="alert('Baca selengkapnya: Workshop pertanian organik akan diselenggarakan di berbagai kabupaten dengan instruktur berpengalaman. Daftar sekarang di aplikasi atau kantor dinas setempat.')">Baca</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Teknologi Section -->
+    <section id="teknologi" class="section">
+        <h2>🚀 Teknologi Pertanian Terbaru</h2>
+        
+        <!-- Teknologi Pasca Panen -->
+        <h3 class="subsection-title">🏭 Teknologi Pasca Panen</h3>
+        <div class="tech-grid">
+            <div class="tech-card">
+                <div class="tech-icon">🚜</div>
+                <h4>Mesin Pemotong & Pengiris</h4>
+                <p>Alat otomatis untuk memotong dan mengiris hasil panen dengan cepat dan merata</p>
+                <p class="price">Harga: Rp 5-10 juta</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-icon">🔬</div>
+                <h4>Alat Pengukur Kualitas</h4>
+                <p>Sensor digital untuk mengukur kadar air, kepadatan, dan kualitas hasil panen</p>
+                <p class="price">Harga: Rp 2-5 juta</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-icon">❄️</div>
+                <h4>Sistem Penyimpanan Dingin</h4>
+                <p>Cold storage untuk menjaga kesegaran produk hingga 3x lebih lama</p>
+                <p class="price">Harga: Rp 15-30 juta</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-icon">📦</div>
+                <h4>Mesin Pengemasan Otomatis</h4>
+                <p>Otomasi pengemasan yang higienis dan meningkatkan nilai jual produk</p>
+                <p class="price">Harga: Rp 8-20 juta</p>
+            </div>
+        </div>
+
+        <!-- Teknologi Terbaru Pertanian -->
+        <h3 class="subsection-title">💡 Teknologi Terbaru Pertanian</h3>
+        <div class="tech-grid">
+            <div class="tech-card">
+                <div class="tech-icon">🤖</div>
+                <h4>IoT & Sensor Pintar</h4>
+                <p>Sensor kelembaban tanah, suhu, dan pH untuk monitoring real-time lahan</p>
+                <p class="tech-detail">Efisiensi: Hemat air 40%, hemat pupuk 30%</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-icon">🛸</div>
+                <h4>Drone Pertanian</h4>
+                <p>Drone untuk pemetaan lahan, penyemprotan pestisida, dan monitoring tanaman</p>
+                <p class="tech-detail">Cakupan: 10-60 hektar per hari</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-icon">📱</div>
+                <h4>Aplikasi Mobile</h4>
+                <p>Aplikasi untuk manajemen lahan, prediksi cuaca, dan konsultasi petani</p>
+                <p class="tech-detail">Gratis untuk semua petani</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-icon">🧬</div>
+                <h4>Bibit Unggul Bersertifikat</h4>
+                <p>Varietas baru dengan hasil lebih tinggi, tahan hama, dan adaptif</p>
+                <p class="tech-detail">Hasil: +30-50% lebih produktif</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-icon">🌾</div>
+                <h4>Pertanian Presisi</h4>
+                <p>Teknik pemberian pupuk dan air sesuai kebutuhan spesifik area lahan</p>
+                <p class="tech-detail">Efisiensi: Hemat biaya 25-35%</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-icon">🌿</div>
+                <h4>Hidroponik & Vertikultur</h4>
+                <p>Menanam tanpa tanah dengan hasil lebih tinggi di lahan terbatas</p>
+                <p class="tech-detail">Hasil: 10x lebih banyak per m²</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 Pertanian Indonesia. Mendukung Petani Kami Semua.</p>
+        <p>Hubungi kami: info@pertanian.id | Telepon: (021) 123-4567</p>
+    </footer>
+
+    <!-- Modal untuk Edukasi -->
+    <div id="eduModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
