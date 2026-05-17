@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Go Tani Nusantara - Menuju Petani Modern</title>
+  <!-- Hubungkan file CSS dan JavaScript eksternal -->
+  <link rel="stylesheet" href="style.css">
+  <!-- Font Awesome 6 untuk icon sederhana -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Google Font yang jelas dan besar -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ==================== NAVIGASI SEDERHANA ==================== -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo-area">
+        <img src="Logo.jpeg" alt="Logo Go Tani" class="nav-logo" onerror="this.onerror=null; this.src='https://via.placeholder.com/45?text=GT';">
+        <span class="brand-name">Go Tani Nusantara</span>
+      </div>
+      <ul class="nav-menu">
+        <li><a href="#beranda"><i class="fas fa-home"></i> Beranda</a></li>
+        <li><a href="#harga"><i class="fas fa-chart-line"></i> Harga</a></li>
+        <li><a href="#tanya-ai"><i class="fas fa-robot"></i> Tanya AI</a></li>
+        <li><a href="#cuaca"><i class="fas fa-cloud-sun"></i> Cuaca</a></li>
+        <li><a href="#berita"><i class="fas fa-newspaper"></i> Berita</a></li>
+        <li><a href="#teknologi"><i class="fas fa-tractor"></i> Teknologi</a></li>
+      </ul>
+      <div class="menu-toggle" id="mobile-menu">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- BERANDA / HERO -->
+    <section id="beranda" class="hero">
+      <div class="hero-content">
+        <h1>Selamat Datang di <span class="highlight">Go Tani Nusantara</span></h1>
+        <p>Solusi cerdas petani modern: harga pasar, cuaca akurat, tanya AI, dan teknologi terkini.</p>
+        <a href="#tanya-ai" class="btn-primary"><i class="fas fa-message"></i> Tanya Go Tani</a>
+      </div>
+    </section>
+
+    <!-- 1. HARGA PASAR (data dummy) -->
+    <section id="harga" class="section-card">
+      <div class="container">
+        <h2><i class="fas fa-chart-simple"></i> Informasi Harga Pasar (per kg)</h2>
+        <p>Data simulasi terkini untuk cabai, bawang, tomat, beras, jagung.</p>
+        <div class="table-wrapper">
+          <table id="hargaTable">
+            <thead>
+              <tr><th>Komoditas</th><th>Harga (Rp)</th><th>Perubahan</th></tr>
+            </thead>
+            <tbody id="hargaBody"></tbody>
+          </table>
+        </div>
+        <p class="keterangan"><i class="fas fa-info-circle"></i> Data hanya contoh edukasi bagi petani.</p>
+      </div>
+    </section>
+
+    <!-- 2. TANYA GO TANI (AI) -->
+    <section id="tanya-ai" class="section-card alt-bg">
+      <div class="container">
+        <h2><i class="fas fa-comment-dots"></i> Tanya Go Tani (AI Bertani)</h2>
+        <p>Tanyakan hama, pupuk, tanaman, cuaca, atau teknologi pertanian.</p>
+        <div class="ai-chat-box">
+          <textarea id="pertanyaanInput" rows="3" placeholder="Contoh: Bagaimana cara mengatasi hama wereng pada padi?"></textarea>
+          <button id="btnTanyaAI" class="btn-primary"><i class="fas fa-paper-plane"></i> Kirim Pertanyaan</button>
+          <div class="answer-area">
+            <label><i class="fas fa-lightbulb"></i> Jawaban AI:</label>
+            <div id="jawabanAI" class="jawaban-card">Klik tombol atau tulis pertanyaan...</div>
+          </div>
+        </div>
+        <div class="api-info">
+      
+      </div>
+    </section>
+
+    <!-- 3. PRAKIRAAN CUACA (OpenWeather API) -->
+    <section id="cuaca" class="section-card">
+      <div class="container">
+        <h2><i class="fas fa-cloud-sun-rain"></i> Prakiraan Cuaca & Iklim</h2>
+        <div class="weather-control">
+          <input type="text" id="kotaInput" placeholder="Nama kota, misal: Jakarta, Bandung, Yogyakarta" value="Yogyakarta">
+          <button id="btnCekCuaca" class="btn-secondary"><i class="fas fa-search"></i> Cek Cuaca</button>
+        </div>
+        <div id="weatherResult" class="weather-card">
+          <p><i class="fas fa-spinner fa-spin"></i> Masukkan kota dan klik cek cuaca.</p>
+        </div>
+        <div class="api-info">
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. BERITA PERTANIAN TERBARU (card dari array dummy) -->
+    <section id="berita" class="section-card alt-bg">
+      <div class="container">
+        <h2><i class="fas fa-rss"></i> Berita Pertanian Terbaru</h2>
+        <div class="news-grid" id="newsContainer"></div>
+      </div>
+    </section>
+
+    <!-- 5. TEKNOLOGI PASCA PANEN & TEKNOLOGI TERBARU -->
+    <section id="teknologi" class="section-card">
+      <div class="container">
+        <h2><i class="fas fa-microchip"></i> Teknologi Pasca Panen & Inovasi Terkini</h2>
+        <div class="tech-grid">
+          <!-- 3 teknologi pasca panen -->
+          <div class="tech-card"><i class="fas fa-fan fa-2x"></i><h3>Pengeringan Modern</h3><p>Mesin pengering tenaga surya + rumah plastik, turunkan kadar air cepat, hasil panen lebih awet.</p></div>
+          <div class="tech-card"><i class="fas fa-warehouse fa-2x"></i><h3>Penyimpanan Silo</h3><p>Silo kedap udara, kontrol suhu & kelembapan, bebas hama. Cocok untuk beras dan jagung.</p></div>
+          <div class="tech-card"><i class="fas fa-boxes fa-2x"></i><h3>Pengemasan Vakum</h3><p>Kemasan vakum menjaga kesegaran sayur & buah, memperpanjang umur simpan hingga 2x lipat.</p></div>
+          <!-- 3 teknologi pertanian mutakhir -->
+          <div class="tech-card"><i class="fas fa-drone fa-2x"></i><h3>Drone Pertanian</h3><p>Pemetaan lahan, penyemprotan presisi, dan pemantauan tanaman dari udara.</p></div>
+          <div class="tech-card"><i class="fas fa-water fa-2x"></i><h3>Irigasi Pintar</h3><p>Sistem tetes otomatis berbasis sensor kelembaban tanah, hemat air hingga 60%.</p></div>
+          <div class="tech-card"><i class="fas fa-tachometer-alt fa-2x"></i><h3>Sensor Tanah IoT</h3><p>Sensor pH, NPK, dan kelembaban realtime, rekomendasi pemupukan tepat guna.</p></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER SEDERHANA -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div><i class="fas fa-leaf"></i> Go Tani Nusantara | Membantu Petani Indonesia</div>
+      <div>&copy; 2026 - Go Tani Nusantara
+    </div>
+  </footer>
+  
+  <script src="script.js"></script>
+</body>
+</html>
