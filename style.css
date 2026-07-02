@@ -90,6 +90,38 @@ body {
 
 /* ========== HERO ========== */
 .hero {
+    background-image: url(Bg\ Tani.png); /* Ganti dengan nama file gambar Anda */
+    background-size: cover;          /* Agar gambar menutupi seluruh area */
+    background-position: center;     /* Posisi gambar di tengah */
+    background-repeat: no-repeat;    /* Jangan mengulang gambar */
+    background-color: #c8e6c9;       /* Warna cadangan jika gambar gagal dimuat */
+    padding: 70px 20px;
+    text-align: center;
+    position: relative;
+    /* Agar teks tetap terbaca, tambahkan lapisan gelap transparan */
+}
+
+/* Menambahkan overlay gelap agar teks lebih kontras (opsional) */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(75, 75, 75, 0.75); /* Lapisan hitam transparan 40% */
+    z-index: 1;
+}
+
+/* Pastikan konten hero berada di atas overlay */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    color: white; /* Warna teks jadi putih agar kontras */
+}
+
+/* Jika ingin teks tetap hijau gelap, gunakan overlay lebih tipis */
+/* Sesuaikan sendiri ya */
   background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
   padding: 70px 20px;
   text-align: center;
@@ -410,7 +442,83 @@ textarea {
     color: #4a6b4a;
     line-height: 1.5;
 }
+/* ========== KALKULATOR ANALISIS ========== */
+.analisis-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-top: 25px;
+  background: white;
+  padding: 30px;
+  border-radius: 30px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+}
 
+.analisis-input .form-group {
+  margin-bottom: 18px;
+}
+
+.analisis-input label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #1e3a2f;
+}
+
+.analisis-input input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #dcedc8;
+  border-radius: 40px;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.analisis-input input:focus {
+  border-color: #2e7d32;
+  outline: none;
+}
+
+.analisis-hasil {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  justify-content: center;
+}
+
+.hasil-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f1f8e9;
+  padding: 12px 20px;
+  border-radius: 50px;
+  border-left: 5px solid #2e7d32;
+}
+
+.hasil-item .label {
+  font-weight: 600;
+  color: #1e3a2f;
+}
+
+.hasil-item .value {
+  font-weight: 700;
+  color: #1b5e20;
+  font-size: 1.1rem;
+}
+
+/* Responsif untuk HP */
+@media (max-width: 768px) {
+  .analisis-grid {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+  .hasil-item {
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+}
 @media (max-width: 768px) {
     .news-img {
         height: 140px;

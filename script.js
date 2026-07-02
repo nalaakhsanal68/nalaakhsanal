@@ -345,6 +345,62 @@ function bindEvents() {
   }
 }
 
+// Di dalam fungsi bindEvents() atau di dalam DOMContentLoaded, tambahkan:
+const btnAnalisis = document.getElementById('btnHitungAnalisis');
+if (btnAnalisis) {
+  btnAnalisis.addEventListener('click', hitungAnalisis);
+}
+
+// ==================== KALKULATOR ANALISIS USAHA ====================
+function hitungAnalisis() {
+  // Ambil nilai dari input
+  const biayaTetap = parseFloat(document.getElementById('biayaTetap').value) || 0;
+  const biayaVariabel = parseFloat(document.getElementById('biayaVariabel').value) || 0;
+  const hargaJual = parseFloat(document.getElementById('hargaJual').value) || 0;
+  const jumlahProduksi = parseFloat(document.getElementById('jumlahProduksi').value) || 0;
+
+  // Variabel untuk output
+  let bepUnit = 0, bepRupiah = 0, laba = 0, hargaMin = 0, status = '';
+
+  // Validasi agar tidak ada pembagian dengan nol
+  const margin = hargaJual - biayaVariabel;
+
+  if (margin <= 0) {
+    // Jika harga jual lebih kecil atau sama dengan biaya variabel, tidak mungkin untung
+    document.getElementById('bepUnit').textContent = '∞ (tidak mencapai)';
+    document.getElementById('bepRupiah').textContent = '∞';
+    document.getElementById('estimasiLaba').textContent = 'Rp ' + (biayaTetap * -1).toLocaleString() + ' (rugi)';
+    document.getElementById('hargaMinimum').textContent = '> Rp ' + (biayaVariabel).toLocaleString();
+    document.getElementById('statusUsaha').textContent = '⚠️ Harga jual terlalu rendah!';
+    return;
+  }
+
+  // Hitung BEP unit
+  bepUnit = biayaTetap / margin;
+  bepRupiah = bepUnit * hargaJual;
+
+  // Hitung laba
+  laba = (margin * jumlahProduksi) - biayaTetap;
+
+  // Harga jual minimum agar BEP pada jumlah produksi saat ini
+  hargaMin = biayaVariabel + (biayaTetap / jumlahProduksi);
+
+  // Tentukan status
+  if (laba > 0) {
+    status = '✅ Untung! (Rp ' + laba.toLocaleString() + ')';
+  } else if (laba === 0) {
+    status = '⚖️ Impas (tidak untung tidak rugi)';
+  } else {
+    status = '❌ Rugi! (kurang Rp ' + (laba * -1).toLocaleString() + ')';
+  }
+
+  // Tampilkan hasil dengan format rapi
+  document.getElementById('bepUnit').textContent = bepUnit.toFixed(1) + ' unit';
+  document.getElementById('bepRupiah').textContent = 'Rp ' + bepRupiah.toLocaleString();
+  document.getElementById('estimasiLaba').textContent = 'Rp ' + laba.toLocaleString();
+  document.getElementById('hargaMinimum').textContent = 'Rp ' + hargaMin.toLocaleString();
+  document.getElementById('statusUsaha').textContent = status;
+}
 // ==================== 8. INITIALISASI SEWAKTU HALAMAN SIAP ====================
 document.addEventListener("DOMContentLoaded", () => {
   loadHargaPasar();
