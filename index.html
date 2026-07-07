@@ -94,10 +94,10 @@
         </div>
       </div>
     </section>
-<li><a href="#analisis"><i class="fas fa-calculator"></i> Analisis Usaha</a></li>    <!-- TAMBAHAN: KALKULATOR ANALISIS USAHA TANI -->
+<li><a href="#analisis"><i class=""></i> </a></li>    <!-- TAMBAHAN: KALKULATOR ANALISIS USAHA TANI -->
 <section id="analisis" class="section-card alt-bg">
   <div class="container">
-    <h2><i class="fas fa-chart-pie"></i> Kalkulator Analisis Usaha Tani</h2>
+    <h2><i class="calculator"></i> Kalkulator Analisis Usaha Tani</h2>
     <p>Masukkan biaya dan target produksi, dapatkan BEP, harga minimum, dan estimasi keuntungan.</p>
 
     <div class="analisis-grid">
@@ -108,15 +108,15 @@
           <input type="number" id="biayaTetap" placeholder="Contoh: 5000000" value="5000000">
         </div>
         <div class="form-group">
-          <label for="biayaVariabel">Biaya Variabel per Unit (Rp) <i class="fas fa-info-circle" title="Bibit, pupuk, air per kg/sayur"></i></label>
+          <label for="biayaVariabel">Biaya Variabel per Unit/kg (Rp) <i class="fas fa-info-circle" title="Bibit, pupuk, air per kg/sayur"></i></label>
           <input type="number" id="biayaVariabel" placeholder="Contoh: 2000" value="2000">
         </div>
         <div class="form-group">
-          <label for="hargaJual">Harga Jual per Unit (Rp) <i class="fas fa-info-circle" title="Harga jual per kg/sayur"></i></label>
+          <label for="hargaJual">Harga Jual per Unit/Kg (Rp) <i class="fas fa-info-circle" title="Harga jual per kg/sayur"></i></label>
           <input type="number" id="hargaJual" placeholder="Contoh: 5000" value="5000">
         </div>
         <div class="form-group">
-          <label for="jumlahProduksi">Jumlah Produksi (unit) <i class="fas fa-info-circle" title="Total kg/sayur yang dipanen"></i></label>
+          <label for="jumlahProduksi">Jumlah Produksi/kg (unit) <i class="fas fa-info-circle" title="Total kg/sayur yang dipanen"></i></label>
           <input type="number" id="jumlahProduksi" placeholder="Contoh: 3000" value="3000">
         </div>
         <button id="btnHitungAnalisis" class="btn-primary"><i class="fas fa-calculator"></i> Hitung Analisis</button>
@@ -125,7 +125,7 @@
       <!-- Kolom Hasil -->
       <div class="analisis-hasil" id="hasilAnalisis">
         <div class="hasil-item">
-          <span class="label">🔄 BEP (unit)</span>
+          <span class="label">🔄 BEP (unit/kg)</span>
           <span class="value" id="bepUnit">-</span>
         </div>
         <div class="hasil-item">
@@ -165,39 +165,34 @@
     <div class="tech-grid">
   <!-- Teknologi Pasca Panen -->
   <div class="tech-card" data-tech="pengeringan">
-    <img src="https://source.unsplash.com/featured/?rice,dryer" alt="Pengeringan Modern" class="tech-img">
+    <img src="pengerung.jpeg" width="150px" alt="Pengeringan Modern" class="tech-img"> 
     <i class="fas fa-sun-plant-wilt fa-2x"></i>
     <h3>Pengeringan Modern</h3>
     <p>Mesin pengering tenaga surya + rumah plastik, turunkan kadar air cepat, hasil panen lebih awet.</p>
   </div>
   <div class="tech-card" data-tech="silo">
-    <img src="https://source.unsplash.com/featured/?silo,storage" alt="Penyimpanan Silo" class="tech-img">
-    <i class="fas fa-warehouse fa-2x"></i>
+    <img src="silo.jpg" width="150px" alt="Penyimpanan Silo" class="tech-img">
     <h3>Penyimpanan Silo</h3>
     <p>Silo kedap udara, kontrol suhu & kelembapan, bebas hama. Cocok untuk beras dan jagung.</p>
   </div>
   <div class="tech-card" data-tech="vakum">
-    <img src="https://source.unsplash.com/featured/?vacuum,packaging" alt="Pengemasan Vakum" class="tech-img">
-    <i class="fas fa-boxes fa-2x"></i>
+    <img src="vacum.jpg" width="150px" alt="Pengemasan Vakum" class="tech-img">
     <h3>Pengemasan Vakum</h3>
     <p>Kemasan vakum menjaga kesegaran sayur & buah, memperpanjang umur simpan hingga 2x lipat.</p>
   </div>
   <!-- Teknologi Terbaru -->
   <div class="tech-card" data-tech="drone">
-    <img src="https://source.unsplash.com/featured/?drone,farming" alt="Drone Pertanian" class="tech-img">
-    <i class="fas fa-drone fa-2x"></i>
+    <img src="drone.jpg" width="150px" alt="Drone Pertanian" class="tech-img">
     <h3>Drone Pertanian</h3>
     <p>Pemetaan lahan, penyemprotan presisi, dan pemantauan tanaman dari udara.</p>
   </div>
   <div class="tech-card" data-tech="irigasi">
-    <img src="https://source.unsplash.com/featured/?irrigation,smart" alt="Irigasi Pintar" class="tech-img">
-    <i class="fas fa-water fa-2x"></i>
+    <img src="irigasi.jpg" width="150px" alt="Irigasi Pintar" class="tech-img">
     <h3>Irigasi Pintar</h3>
-    <p>Sistem tetes otomatis berbasis sensor kelembaban tanah, hemat air hingga 60%.</p>
+    <p>Sistem irigasi otomatis berbasis sensor kelembaban tanah, hemat air hingga 60%.</p>
   </div>
   <div class="tech-card" data-tech="sensor">
-    <img src="https://source.unsplash.com/featured/?soil,sensor" alt="Sensor Tanah IoT" class="tech-img">
-    <i class="fas fa-tachometer-alt fa-2x"></i>
+    <img src="iot.jpg" width="150px" alt="Sensor Tanah IoT" class="tech-img">
     <h3>Sensor Tanah IoT</h3>
     <p>Sensor pH, NPK, dan kelembaban realtime, rekomendasi pemupukan tepat guna.</p>
   </div>
